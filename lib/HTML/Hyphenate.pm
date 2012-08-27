@@ -2,16 +2,11 @@ package HTML::Hyphenate;    # -*- cperl; cperl-indent-level: 4 -*-
 use strict;
 use warnings;
 
-# $Id: Hyphenate.pm 387 2010-12-21 19:41:17Z roland $
-# $Revision: 387 $
-# $HeadURL: svn+ssh://ipenburg.xs4all.nl/srv/svnroot/elaine/trunk/HTML-Hyphenate/lib/HTML/Hyphenate.pm $
-# $Date: 2010-12-21 20:41:17 +0100 (Tue, 21 Dec 2010) $
-
 use 5.006000;
 use utf8;
 use charnames qw(:full);
 
-our $VERSION = '0.05';
+our $VERSION = '0.100';
 
 use Log::Log4perl qw(:easy get_logger);
 use Set::Scalar;
@@ -353,7 +348,7 @@ HTML::Hyphenate - class for inserting soft hyphens into HTML.
 
 =head1 VERSION
 
-This is version 0.05.
+This is version 0.100.
 
 =head1 SYNOPSIS
 

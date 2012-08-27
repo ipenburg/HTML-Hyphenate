@@ -1,5 +1,8 @@
 Revision history for HTML-Hyphenate
 
+0.100 Mon Aug 27 15:24:34 2012
+    - Refactored from ExtUtils::MakeMaker to Module::Build
+
 0.05  Tue Dec 21 17:03:29 2010
        Fixed RT#64114
 
