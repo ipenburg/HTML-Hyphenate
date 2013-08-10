@@ -21,3 +21,4 @@ META.*
 MYMETA.*
 nytprof.out
 pm_to_blib
+perltidy.LOG
