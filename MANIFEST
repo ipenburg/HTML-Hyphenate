@@ -1,10 +1,10 @@
 Changes
 MANIFEST
-Makefile.PL
+MANIFEST.SKIP
+Build.PL
 README
-example/add_shy.pl
+bin/hyphenate_html
 lib/HTML/Hyphenate.pm
-lib/HTML/Hyphenate/TypeDef.pm
 t/00_base.t
 t/00_signature.t
 t/01_default.t
@@ -16,6 +16,5 @@ t/11_test-coverage.t
 t/12_manifest.t
 t/13_critic.t
 t/14_kwalitee.t
-t/15_spell.t
 t/perlcriticrc
 t/rt.t

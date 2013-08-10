@@ -1,13 +1,13 @@
-# $Id: 03_lang.t 114 2009-08-02 19:12:48Z roland $
-# $Revision: 114 $
-# $HeadURL: svn+ssh://ipenburg.xs4all.nl/srv/svnroot/elaine/trunk/HTML-Hyphenate/t/03_lang.t $
-# $Date: 2009-08-02 21:12:48 +0200 (Sun, 02 Aug 2009) $
-
 use strict;
 use warnings;
 use utf8;
 use Test::More;
-$ENV{TEST_AUTHOR} && eval { require Test::NoWarnings };
+$ENV{AUTHOR_TESTING} && eval { require Test::NoWarnings };
+
+my $builder = Test::More->builder;
+binmode $builder->output,         ":utf8";
+binmode $builder->failure_output, ":utf8";
+binmode $builder->todo_output,    ":utf8";
 
 my @fragments = (
     [
@@ -350,13 +350,10 @@ TODO: {
 	}
 };
 
-my $msg = 'Author test. Set $ENV{TEST_AUTHOR} to a true value to run.';
+my $msg = 'Author test. Set $ENV{AUTHOR_TESTING} to a true value to run.';
 SKIP: {
-    skip $msg, 1 unless $ENV{TEST_AUTHOR};
+    skip $msg, 1 unless $ENV{AUTHOR_TESTING};
 }
-if ($ENV{TEST_AUTHOR}) {
-	TODO: {
-		local $TODO = q{Wide characters in prints by Test::More};
-		Test::NoWarnings::had_no_warnings();
-	}
+if ($ENV{AUTHOR_TESTING}) {
+	Test::NoWarnings::had_no_warnings();
 }

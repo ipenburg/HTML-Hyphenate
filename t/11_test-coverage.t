@@ -1,8 +1,3 @@
-# $Id: 11_test-coverage.t 387 2010-12-21 19:41:17Z roland $
-# $Revision: 387 $
-# $HeadURL: svn+ssh://ipenburg.xs4all.nl/srv/svnroot/elaine/trunk/HTML-Hyphenate/t/11_test-coverage.t $
-# $Date: 2010-12-21 20:41:17 +0100 (Tue, 21 Dec 2010) $
-
 use strict;
 use warnings;
 use utf8;
@@ -26,5 +21,6 @@ $obj->default_included(1);
 $obj->classes_included([qw(foo bar)]);
 $obj->classes_excluded([qw(baz qu)]);
 $obj->hyphenated();
+$obj->meta();
 
 Test::TestCoverage::ok_test_coverage('HTML::Hyphenate');
