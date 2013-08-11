@@ -3,6 +3,7 @@ use warnings;
 use utf8;
 
 use Test::More;
+use TeX::Hyphen;
 if ( !eval { require Test::TestCoverage; 1 } ) {
 	plan skip_all => q{Test::TestCoverage required for testing test coverage};
 }
@@ -20,6 +21,8 @@ $obj->default_lang(q{en_US});
 $obj->default_included(1);
 $obj->classes_included([qw(foo bar)]);
 $obj->classes_excluded([qw(baz qu)]);
+my $tex = TeX::Hyphen->new();
+$obj->register_tex_hyphen('en_US', $tex);
 $obj->hyphenated();
 $obj->meta();
 

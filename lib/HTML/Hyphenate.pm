@@ -52,6 +52,7 @@ Readonly::Scalar my $LOG_HTML_METHOD   => q{Using HTML passed to method '%s'};
 Readonly::Scalar my $LOG_HTML_PROPERTY => q{Using HTML property '%s'};
 Readonly::Scalar my $LOG_HTML_UNDEF    => q{HTML to hyphenate is undefined};
 Readonly::Scalar my $LOG_NOT_HYPHEN    => q{No pattern found for '%s'};
+Readonly::Scalar my $LOG_REGISTER      => q{Registering TeX::Hyphen object for label '%s'};
 
 my $ANYTHING = qr/.*/xsm;
 
@@ -100,6 +101,16 @@ sub hyphenated {
     }
     $log->warn($LOG_HTML_UNDEF);
     return;
+}
+
+sub register_tex_hyphen {
+    my ($self, $label, $tex) = @_;
+	if (defined $label && $tex->isa('TeX::Hyphen') ) {
+		my $cache = $self->_hyphenators;
+		$log->debug( sprintf $LOG_REGISTER, $label );
+		${$cache}{ $label } = $tex;
+		$self->_hyphenators($cache);
+	}
 }
 
 sub _traverse_html {
@@ -374,6 +385,10 @@ hyphens inserted.
 
 Gets or sets a reference to an array of class names that will not have soft
 hyphens inserted.
+
+=item $hyphenator->register_tex_hyphen(C<lang>, C<TeX::Hyphen>)
+
+Registers a TeX::Hyphen object to handle the language defined by C<lang>.
 
 =back
 
