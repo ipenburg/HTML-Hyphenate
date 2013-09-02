@@ -1,4 +1,6 @@
-package HTML::Hyphenate;    # -*- cperl; cperl-indent-level: 4 -*-
+# -*- cperl; cperl-indent-level: 4 -*-
+# Copyright (C) 2009-2013, Roland van Ipenburg
+package HTML::Hyphenate 0.100;
 
 use strict;
 use warnings;
@@ -9,8 +11,6 @@ use 5.014000;
 use Moose;
 use namespace::autoclean '-also' => qr/^__/sxm;
 use charnames qw(:full);
-
-our $VERSION = '0.100';
 
 use Log::Log4perl qw(:easy get_logger);
 use Set::Scalar;
@@ -298,7 +298,7 @@ HTML::Hyphenate - insert soft hyphens into HTML.
 
 =head1 VERSION
 
-This is version 0.100.
+This document describes HTML::Hyphenate version 0.100.
 
 =head1 SYNOPSIS
 
@@ -478,7 +478,7 @@ Roland van Ipenburg, E<lt>ipenburg@xs4all.nlE<gt>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2013 by Roland van Ipenburg
+Copyright (C) 2009-2013, Roland van Ipenburg
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.14.0 or,

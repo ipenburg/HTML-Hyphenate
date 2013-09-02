@@ -1,13 +1,12 @@
 #!/usr/bin/env perl -w    # -*- cperl; cperl-indent-level: 4 -*-
+# Copyright (C) 2009-2013, Roland van Ipenburg
 use strict;
 use warnings;
 
-use 5.014000;
 use utf8;
+use 5.014000;
 
 BEGIN { our $VERSION = '0.100'; }
-
-# Copyright 2013 Roland van Ipenburg
 
 use Encode qw(decode_utf8);
 use HTML::Hyphenate;

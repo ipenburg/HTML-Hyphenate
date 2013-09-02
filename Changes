@@ -1,8 +1,9 @@
 Revision history for Perl extension HTML::Hyphenate.
 
-0.100 Sat Aug 10 21:24:34 2013
+0.100 Mon Sep  2 21:21:28 UTC 2013
     - Refactored from ExtUtils::MakeMaker to Module::Build
     - Refactored from Class::Meta to Moose
+    - Added licenses
 
 0.05  Tue Dec 21 17:03:29 2010
        Fixed RT#64114
