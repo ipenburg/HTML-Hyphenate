@@ -12,7 +12,7 @@ use Encode qw(decode_utf8);
 use HTML::Hyphenate;
 
 use File::Slurp qw(read_file);
-use Readonly;
+use Readonly qw(Scalar);
 Readonly::Scalar my $EMPTY      => q{};
 Readonly::Scalar my $MIN_LENGTH => 5;
 
@@ -20,7 +20,7 @@ my $hyphenator = HTML::Hyphenate->new();
 $hyphenator->min_length($MIN_LENGTH);
 
 while ( my $filename = shift @ARGV ) {
-    my $html = read_file( $filename, binmode => ':utf8' );
+    my $html = read_file( $filename, 'binmode' => ':utf8' );
     $html = decode_utf8 $html;
     binmode STDOUT, ':encoding(UTF-8)';
     my ( $pre, $body, $post ) = $html =~ m{^(.*<body>)(.*)(</body>.*)$}xmgis;
