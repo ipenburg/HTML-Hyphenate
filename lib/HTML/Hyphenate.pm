@@ -33,10 +33,7 @@ Readonly::Scalar my $LANG         => q{lang};
 Readonly::Scalar my $TEXT         => q{text};
 Readonly::Scalar my $TAG          => q{tag};
 Readonly::Scalar my $RAW          => q{raw};
-Readonly::Scalar my $NOBR         => q{nobr};
 Readonly::Scalar my $PRE          => q{pre};
-Readonly::Scalar my $NOWRAP       => q{*[nowrap]};
-Readonly::Scalar my $STYLE        => q{style};
 Readonly::Scalar my $CLASS        => q{class};
 Readonly::Scalar my $CLASS_JOINER => q{, .};
 
@@ -59,9 +56,6 @@ Readonly::Scalar my $LOG_REGISTER =>
 # HTML5 %Text attributes <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes>
 my $text_attr =
   Set::Scalar->new(qw/abbr alt label list placeholder standby summary title/);
-
-# Match inline style requesting not to wrap anyway:
-my $STYLE_NOWRAP = q{[style*=nowrap]};
 
 Log::Log4perl->easy_init($ERROR);
 my $log = get_logger();
@@ -238,10 +232,7 @@ sub _hyphenable_by_class {
 
 sub _hyphenable {
     my ( $self, $node ) = @_;
-    return !( $node->ancestors($NOBR)->size
-        || $node->ancestors($PRE)->size
-        || $node->ancestors($NOWRAP)->size
-        || $node->ancestors($STYLE_NOWRAP)->size
+    return !( $node->ancestors($PRE)->size
         || !$self->_hyphenable_by_class($node) );
 }
 
