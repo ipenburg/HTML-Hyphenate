@@ -1,6 +1,13 @@
 Revision history for Perl extension HTML::Hyphenate.
 
-0.100 Mon Sep  2 21:21:28 UTC 2013
+1.0.0 Sun Jul 29 13:22:51 UTC 2018
+    - internally replaced HTML::TreeBuilder with Mojo::DOM to handle inline SVG
+	- dropped support for XML output for Mojo::DOM compatibility
+
+0.101 Sun Jul 22 05:48:37 UTC 2018
+    - fixed missing Test::Warn test prerequisite
+
+0.100 Sat Jul 21 21:39:31 UTC 2018
     - Refactored from ExtUtils::MakeMaker to Module::Build
     - Refactored from Class::Meta to Moose
     - Added licenses

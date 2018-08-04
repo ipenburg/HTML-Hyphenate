@@ -3,6 +3,7 @@ use warnings;
 use utf8;
 use Test::More;
 $ENV{AUTHOR_TESTING} && eval { require Test::NoWarnings };
+use Test::Warn;
 
 my $builder = Test::More->builder;
 binmode $builder->output,         ":utf8";
@@ -334,19 +335,23 @@ my @utf8_fragments = (
         'lang el-polyton'
     ],
 );
-
-plan tests => ( 0 + @fragments + @utf8_fragments ) + 1;
+# 50 fragments + 14 utf8 fragments
+plan tests => ( 0 + @fragments + (@utf8_fragments << 1)) + 1;
 
 use HTML::Hyphenate;
 my $h = HTML::Hyphenate->new();
 foreach my $frag (@fragments) {
-    is( $h->hyphenated( @{$frag}[0] ), @{$frag}[1], @{$frag}[2] );
+	is( $h->hyphenated( @{$frag}[0] ), @{$frag}[1], @{$frag}[2] );
 }
 
 TODO: {
 	local $TODO = q{utf8 patterns not yet supported by TeX::Hyphen};
 	foreach my $frag (@utf8_fragments) {
-		is( $h->hyphenated( @{$frag}[0] ), @{$frag}[1], @{$frag}[2] );
+		warnings_like {
+			is( $h->hyphenated( @{$frag}[0] ), @{$frag}[1], @{$frag}[2] );
+		} [
+			qr/Use of uninitialized value within %CARON_MAP in substitution iterator.*/,
+		], 'Warned about uninitialized value within %CARON_MAP';
 	}
 };
 
