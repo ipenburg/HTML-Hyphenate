@@ -57,7 +57,8 @@ Readonly::Scalar my $LOG_REGISTER =>
 
 # HTML %Text attributes <http://www.w3.org/TR/REC-html40/index/attributes.html>
 # HTML5 %Text attributes <https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes>
-my $text_attr = Set::Scalar->new(qw/abbr alt label list placeholder standby summary title/);
+my $text_attr =
+  Set::Scalar->new(qw/abbr alt label list placeholder standby summary title/);
 
 # Match inline style requesting not to wrap anyway:
 my $STYLE_NOWRAP = q{[style*=nowrap]};
