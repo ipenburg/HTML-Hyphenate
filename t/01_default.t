@@ -85,6 +85,16 @@ my @fragments = (
         'image with alt attribute'
     ],
     [
+'<input list="Supercalifragilisticexpialidocious"/>',
+'<input list="Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious">',
+        'input with list attribute'
+    ],
+    [
+'<input placeholder="Supercalifragilisticexpialidocious"/>',
+'<input placeholder="Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious">',
+        'input with placeholder attribute'
+    ],
+    [
 '<select><option label="Supercalifragilisticexpialidocious">Supercalifragilisticexpialidocious</option></select>',
 '<select><option label="Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious">Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious</option></select>',
         'single word option with label attribute'
