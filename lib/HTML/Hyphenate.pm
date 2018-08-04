@@ -14,7 +14,7 @@ use charnames qw(:full);
 use Log::Log4perl qw(:easy get_logger);
 use Set::Scalar;
 use TeX::Hyphen;
-use TeX::Hyphen::Pattern;
+use TeX::Hyphen::Pattern 0.100;
 use Mojo::DOM;
 
 use Readonly;
