@@ -56,12 +56,12 @@ my @fragments = (
     ],
     [
         '<p><nobr>Supercalifragilisticexpialidocious</nobr></p>',
-        '<p><nobr>Supercalifragilisticexpialidocious</nobr></p>',
+        '<p><nobr>Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious</nobr></p>',
         'single word pararaph with nobr'
     ],
     [
         '<p style="white-space: nowrap">Supercalifragilisticexpialidocious</p>',
-        '<p style="white-space: nowrap">Supercalifragilisticexpialidocious</p>',
+        '<p style="white-space: nowrap">Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious</p>',
         'single word pararaph with nowrap inline style'
     ],
     [
@@ -76,7 +76,7 @@ my @fragments = (
     ],
     [
 '<table><tr><th nowrap>Supercalifragilisticexpialidocious</th></tr></table>',
-'<table><tr><th nowrap>Supercalifragilisticexpialidocious</th></tr></table>',
+'<table><tr><th nowrap>Su­per­cal­ifrag­ilis­tic­ex­pi­ali­do­cious</th></tr></table>',
         'single word table head with nowrap attribute'
     ],
     [
