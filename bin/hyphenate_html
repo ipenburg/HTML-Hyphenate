@@ -31,8 +31,7 @@ while ( my $filename = shift @ARGV ) {
     close $fh || die qq{Can't close UTF-8 encoded $fh: $ERRNO};
     ## use critic
     binmode STDOUT, ':encoding(UTF-8)';
-    my ( $pre, $body, $post ) = $html =~ m{^(.*<body>)(.*)(</body>.*)$}xmgis;
     ## no critic qw(RequireCheckedSyscalls)
-    print $pre, $hyphenator->hyphenated($body), $post;
+    print $hyphenator->hyphenated($html);
     ## use critic
 }
