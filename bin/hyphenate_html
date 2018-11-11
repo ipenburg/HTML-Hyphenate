@@ -11,7 +11,9 @@ BEGIN { our $VERSION = v1.1.0; }
 use HTML::Hyphenate;
 
 use Readonly;
+## no critic qw(ProhibitCallsToUnexportedSubs)
 Readonly::Scalar my $MIN_LENGTH => 5;
+## use critic
 
 my $hyphenator = HTML::Hyphenate->new();
 $hyphenator->min_length($MIN_LENGTH);
