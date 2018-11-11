@@ -7,7 +7,7 @@ Module::Build->new(
     dist_author => 'Roland van Ipenburg <ipenburg@xs4all.nl>',
     requires    => {
         'perl'                 => '5.14.0',
-        'Mojo::DOM'            => 0,
+        'Mojo::DOM'            => 6.0,
         'Log::Log4perl'        => 0,
         'Readonly'             => 1.03,
         'Set::Scalar'          => 0,
